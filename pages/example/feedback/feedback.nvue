@@ -1,0 +1,157 @@
+<template>
+	<view>
+		<top-title-arrow title="用户反馈"></top-title-arrow>
+		<view class="feedBackPage">
+			<view class="feed_content">
+				<textarea maxlength='200' v-model="feedbacks" placeholder-class='myplaceholder' value="" placeholder="输入您要反馈的信息，我们收到后会第一时间回复您~" >
+					</textarea>
+			</view>
+			<view class="photos">
+				<view class="picture" v-if="image1">
+					<image :src="pic1" mode=""></image>
+				</view>
+				<view class="picture" v-if="image2">
+					<image :src="pic2" mode=""></image>
+				</view>
+				<view class="picture" v-if="image3">
+					<image :src="pic3" mode=""></image>
+				</view>
+				<view class="selectPicture" @click="selectImg()">
+					<text class="iconfont icontianjiazhaopian" style="font-size: 58rpx;"></text>
+					<text class="tipText">添加照片</text>
+				</view>
+			</view>
+			<functional-button @click='submit' width="100%" title="提交" circle type="surface" size="large" highlight></functional-button>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default{
+		data(){
+			return {
+				feedbacks:"",
+				src:'',
+				textHide:true,
+				image1:false,
+				image2:false,
+				image3:false,
+				pic1:'',
+				pic2:'',
+				pic3:'',
+				curSelectCount:0
+			}
+		},
+		methods:{
+			submit(){
+				//提交反馈内容及图片
+				
+			},
+			selectImg(){
+				let that = this;
+				if(that.curSelectCount<3){
+					uni.chooseImage({
+						count:1,
+						sizeType:'compressed',
+						success: (res) => {
+							that.curSelectCount++;
+							const imgsFile = res.tempFilePaths;
+							if(that.curSelectCount==1){
+								this.image1 = true;
+								this.pic1 = imgsFile[0]
+							} else if(that.curSelectCount==2) {
+								this.image2 = true;
+								this.pic2 = imgsFile[0]
+								
+							} else  if(that.curSelectCount==3){
+								this.image3 = true;
+								this.pic3 = imgsFile[0]
+							} 
+							//上传
+							// const uper=uni.uploadFile({
+							// 	url: 'https://demo.hcoder.net/index.php?c=uperTest',
+							// 	filePath:imgsFile[0],
+							// 	name:'file',
+							// 	// formData:{    },用于做令牌认证
+							// 	success:function(res1){
+							// 		console.log(res1.data)
+							// 	}
+							// })
+						}
+					})
+				}
+			    else {
+					console.log('不可点击')
+				}
+			},
+		   
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	@import '../../../common/icons/iconfont.css';
+.feedBackPage{
+	display: flex;
+	padding: 20px 15px;
+	height: 93.5vh;
+	// background-color: #F5F6F7;
+	/deep/ .myplaceholder{
+		font-size: 24rpx;
+		// color: #92979A;
+	}
+	.feed_content{
+		width: 700rpx;
+		height: 340rpx;
+		border-radius: 20rpx;
+		padding: 10px 15px;
+		// background-color: #FFFFFF;
+		textarea{
+			// color: #1E262F;
+			font-size: 30rpx;
+			width: 100%;
+		}
+	}
+	.photos{
+		margin-top: 15px;
+		margin-bottom: 30px;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		.picture{
+			width: 114rpx;
+			height: 114rpx;
+			margin-right: 10px;
+			// background-color: #FFFFFF;
+			image{
+				width: 114rpx;
+				height: 114rpx;
+				border-radius: 6rpx;
+			}
+		}
+		.selectPicture{
+			width: 114rpx;
+			height: 114rpx;
+			border-radius: 6rpx;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			// background-color: #FFFFFF;
+			.tipText{
+				width: 100%;
+				overflow:hidden;
+				text-overflow:ellipsis;
+				white-space:nowrap;
+				text-align: center;
+				font-size: 18rpx;
+				margin-top: 8rpx;
+				// color: #2EBEF3;
+			}
+		}
+	}
+}
+
+	
+</style>

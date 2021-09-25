@@ -1,0 +1,79 @@
+<template>
+	<div>
+		<top-title-arrow centerTitle>
+			<text>折叠与展开</text>
+		</top-title-arrow>
+		<view class="pageContent" v-for=" index in 3" :key='index'>
+			<view class="line">
+				<div class="left">What is FILProMiner?</div>
+				<div :class="['rightIcon', fold?'iconshouhui':'iconxiala']" style="font-size: 12rpx;" @click="open"></div>
+			</view>
+			<shadow-card v-if="fold" padding="15px">
+				<view class="word">
+					FILProMiner is an industry leading Filcoin mining pool. 
+					All of the mining power is backed up by physical miners. 
+					Mining with the latest algorithms allows to make as much 
+					Filcoin as possible. We aim to provide you with the easiest pos
+					sible way to make money without having to do any of the hard stuff.
+				With data centers around the globe, we aim to keep bills down and 
+				mining power high, meaning you can make more in a shorter amount 
+				of time than what it would take to mine from your home for instance. 
+				Our data centers are located in Europe, USA and China with dedicated 
+				Up-Links and 99% uptime!</view>
+			</shadow-card>
+		</view>
+	</div>
+</template>
+
+<script>
+	export default {
+		data(){
+			return {
+				icons:'iconshouhui',
+				fold: false
+			}
+		},
+		methods:{
+			open(){
+				this.fold = !this.fold;
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	@import '../../../common/icons/iconfont.css' ;
+.pageContent{
+	margin: 15px;
+	.line{
+		width: 100%;
+		height: 80rpx;
+		box-sizing:border-box;
+		border-radius: 10px;
+		// background-color: #2EBEF3;
+		display: flex;
+		flex-direction: row;
+		padding: 10px 15px;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 10px;
+		.left{
+			font-size: 28rpx;
+			font-weight: bold;
+			// color: #FFFFFF;
+			
+		}
+		.rightIcon{
+			font-family:iconfont;
+			font-size:12rpx !important;
+			// color: #FFFFFF;
+		}
+	}
+	.word{
+		font-size: 24rpx;
+		// color: #1E262F;
+		line-height: 34rpx;
+		
+	}
+}
+</style>

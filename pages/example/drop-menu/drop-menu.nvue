@@ -1,0 +1,86 @@
+<template>
+	<div>
+		<top-title-arrow isFixed>
+			<text>下拉框</text>
+		</top-title-arrow>
+		<view style="margin: 15px;">
+			<text>当前选中的内容：{{content}}</text>
+			<!-- <functional-button title="点击下拉" @click='clickButton'></functional-button > -->
+			<shadow-card width="230rpx">
+				<view class="my-se"  @click='clickButton'>下拉菜单 </text></view>
+			</shadow-card>
+			<drop-menu :value="show" :list="list"   @click='changeTab'> </drop-menu>
+			
+	<!-- 		<shadow-card width="300rpx" padding="0px">
+				<select name="" id="" class='my-select'>
+					<option v-for="(item,index) in list" :value="item.name">{{item.name}}</option>
+				</select>
+			</shadow-card> -->
+			
+		</view>
+	</div>
+</template>
+
+<script>
+	export default {
+		data(){
+			return {
+				show:false,
+				list:[
+					{
+						name:'吃饭'
+					},
+					{
+						name:'睡觉'
+					},
+					{
+						name:'工作工作'
+					},
+				],
+				content:''
+			}
+		},
+		methods:{
+			clickButton(){
+				this.show = !this.show;
+			},
+			changeTab(item,value){
+				this.content= item.name;
+				this.show = false;
+				console.log(value,'hahah',item)
+			}
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+@import  '../../../common/icons/iconfont.css';
+.my-se{
+	font-size: 12px;
+}
+select {
+
+	/*很关键：将默认的select选择框样式清除*/
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	border: none;
+	/*将背景改为红色*/
+	// background:red;
+	/*加padding防止文字覆盖*/
+	// padding-right: 14px;
+	option{
+		background: none;
+		
+	}
+}
+
+.my-select{
+	padding:  6px 16px;
+	border-radius: 6px;
+	background-color: #FFFFFF;
+
+}
+// .my-select:
+
+</style>

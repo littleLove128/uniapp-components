@@ -1,0 +1,81 @@
+<template>
+
+	<view>
+		<top-title-arrow isFixed>
+			<text> 列表 </text>
+		</top-title-arrow>
+
+		<uni-section title="单行列表" type="line"></uni-section>
+		<uni-list>
+			<uni-list-item 
+			thumb='../../../static/logo.png'
+			showCorrect="true"
+			title="列表标题文字" 
+			/>
+			<uni-list-item
+			thumb='../../../static/logo.png'
+			title="列表标题文字" 
+			showSwitch="true"
+			 />
+			 <uni-list-item
+			 thumb='../../../static/logo.png'
+			 showArrow="true"
+			 title="列表标题文字" 
+			 />
+			 <uni-list-item
+			 thumb='../../../static/logo.png'
+			 showArrow="true"
+			 title="列表标题文字" 
+			 rightText="详细信息"
+			 />
+		</uni-list>
+		<uni-section title="双行列表" type="line"></uni-section>
+		<uni-list>
+			<uni-list-item title="列表文字" rightText="右侧文字" />
+			<uni-list-item  title="列表文字"  note="列表描述信息"  rightText="右侧文字"  showArrow="true"/>
+			<uni-list-item title="双行列表" note="描述信息" showArrow thumb="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png" thumb-size="lg" rightText="详细信息" />
+		</uni-list>
+		<uni-section title="说明内容" type="line"></uni-section>
+		<uni-list>
+			<uni-list-item title="列表文字" rightText="右侧文字" showArrow="true"/>
+			<uni-list-item title="列表文字" rightPic="../../../static/logo.png" showArrow="true"/>
+		</uni-list>
+		<uni-section title="单项选择" type="line"></uni-section>
+		<uni-list >
+			<uni-list-item  title="列表文字" showCorrect="true" />
+			<uni-list-item  title="列表文字" showCorrect="true" />
+		</uni-list>
+		<uni-section title="多项选择" type="line"></uni-section>
+		<uni-list >
+			<uni-list-item  title="列表文字" deleteIcon='true' @click="delClick(1)" showArrow="true"/>
+			<uni-list-item  title="列表文字" deleteIcon='true' @click="delClick(2)" showArrow="true" />
+		</uni-list>
+	</view>
+
+</template>
+
+<script>
+	export default {
+		data(){
+			return{
+				choiceCur:false
+			}
+		},
+		methods:{
+			choice(){
+				console.log('点击选择')
+			},
+			select(){
+				console.log('选择当前列表项')
+				this.choiceCur=!this.choiceCur;
+			},
+			delClick(i){
+				console.log('点击删除',i)
+			}
+		}
+	}
+</script>
+
+<style>
+
+</style>

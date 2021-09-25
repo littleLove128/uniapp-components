@@ -1,0 +1,823 @@
+[data-theme='blackGoldTheme'] body {
+	background-color: #1e262f !important;
+}
+[data-theme='blackGoldTheme'] .example-body {
+	background-color: #28323d;
+}
+// 字体或者宽高为22px的
+$font-or-wh22: 44rpx;
+$font-or-wh2: 4rpx;
+
+// 黑金主题 ，图标为 金色
+[data-theme='blackGoldTheme'] .iconfont {
+	font-family: iconfont;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 500;
+	// font-size: 16px;
+	font-size: 32rpx;
+	color: #e8b50c !important;
+}
+// 黑金主题 ，图标为 白色
+[data-theme='blackGoldTheme'] .iconfontWihte {
+	font-family: iconfont;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 500;
+	// font-size: 16px;
+	font-size: 32rpx;
+	color: #e9ecf0 !important;
+}
+
+// 所有主题 ，图标都为 白色
+[data-theme='blackGoldTheme'] .iconAllWhite {
+	font-family: iconfont;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 500;
+	// font-size: 16px;
+	font-size: 32rpx;
+	color: #ffffff !important;
+}
+[data-theme='blackGoldTheme'] .top-title-arrow {
+	background-color: #28323d;
+	height: 88rpx;
+	box-shadow: 2px 2px 2px rgba(52, 52, 52, 0.08);
+	span {
+		color: #e9ecf0 !important;
+		// font-size: 16px;
+		font-size: 32rpx;
+	}
+	span:nth-child(2) {
+		font-weight: bold;
+	}
+}
+
+[data-theme='blackGoldTheme'] .top-title-home {
+	background-color: #28323d;
+	height: 94rpx;
+	box-shadow: 2px 2px 2px rgba(52, 52, 52, 0.08);
+	.title_text {
+		color: #e9ecf0;
+		font-size: 32rpx;
+		font-weight: bold;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		height: 94rpx;
+		width: 100%;
+	}
+}
+
+//顶部标题 左边是两行的，左右靠边显示
+[data-theme='blackGoldTheme'] .top-title-two-row {
+	background-color: #28323d;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 120rpx;
+	padding-left: 30rpx;
+	padding-right: 32rpx;
+	.showRow {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 10rpx;
+		color: #e8b50c;
+		font-size: 40rpx;
+		font-weight: bold;
+		image {
+			margin-right: 10rpx;
+		}
+	}
+	.subtitle {
+		color: #e9ecf0;
+		font-size: 24rpx;
+	}
+}
+
+//列表样式
+[data-theme='blackGoldTheme'] .uni-list-item {
+	background-color: #1e262f;
+	font-size: 34rpx;
+	color: #e9ecf0 !important;
+	.uni-list--border {
+		border-top-color: #313c45;
+	}
+	.uni-list--border:after {
+		background-color: #313c45;
+	}
+	.uni-list-item__content {
+		color: #e9ecf0 !important;
+	}
+	.uni-list-item__content-title {
+		font-size: 34rpx;
+		color: #e9ecf0;
+	}
+	.uni-list-item__content-note {
+		color: #a2aab4;
+		font-size: 28rpx;
+	}
+	.uni-list-item__extra-text {
+		color: #a2aab4;
+		font-size: 32rpx;
+	}
+	.rightPictrue {
+		width: 56rpx;
+		height: 56rpx;
+	}
+	.iconAllWhite {
+		font-family: iconfont;
+		text-decoration: none;
+		text-align: center;
+		font-weight: 500;
+		font-size: 22rpx;
+		color: #ffffff !important;
+	}
+
+	.selected {
+		//列表为选中的样式
+		width: $font-or-wh22;
+		height: $font-or-wh22;
+		border-radius: 22rpx;
+		background-color: #e8b50c;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.unselected {
+		//列表为选中的样式
+		width: $font-or-wh22;
+		height: $font-or-wh22;
+		border-radius: 22rpx;
+		border: 0.5px solid #e8b50c;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+//侧边栏
+[data-theme='blackGoldTheme'] .uni-drawer {
+	.uni-drawer__content {
+		background-color: #28323d;
+	}
+	.side-bar-list {
+		.side-bar-item {
+			.text {
+				color: #e9ecf0;
+			}
+		}
+		.active-side-bar-item {
+			background: #1e262f;
+			.text {
+				color: #e8b50c;
+			}
+		}
+	}
+
+	.footer {
+		background: #1e262f;
+		.theme,
+		.lang {
+			border: 1rpx solid #e8b50c;
+			.en,
+			.cn {
+				color: #e8b50c;
+			}
+			.activeEn,
+			.activeCn {
+				z-index: 5;
+				color: #1e262f;
+			}
+		}
+		.theme,
+		.lang {
+			.block {
+				background: #e8b50c;
+				border-right: 1rpx solid #e8b50c;
+			}
+			.black {
+				.icona-lujing2024 {
+					color: #1e262f !important;
+				}
+			}
+			.moonBlock,
+			.enBlock {
+				border-left: 2rpx solid #e8b50c;
+			}
+		}
+	}
+}
+//竖线+标题—+箭头布局--组件
+[data-theme='blackGoldTheme'] .left-border-word {
+	color: #e9ecf0;
+	background-color: #1e262f;
+	.left {
+	}
+	.line {
+		background-color: #e8b50c;
+	}
+}
+
+//竖线+标题—+箭头布局 --- 样例
+[data-theme='blackGoldTheme'] .words {
+	box-shadow: 2rpx 2rpx 6rpx 6rpx rgba(52, 52, 52, 0.08);
+	background-color: #28323d;
+	border-radius: 20rpx;
+	width: 343px;
+	height: 273px;
+	display: flex;
+	flex-direction: column;
+}
+//修改组件 uni-title 样式
+$wordColor:#E9ECF0;
+[data-theme = 'blackGoldTheme'] .uni-title__box{
+	.uni-title__base {
+		font-size: 30rpx;
+		color: $wordColor;
+		font-weight: 500;
+	}
+
+	.uni-h1 {
+		font-size: 36rpx;
+		color: $wordColor;
+		font-weight: bold;
+		line-height: 54rpx;
+	}
+	.uni-subh1 {
+		font-size: 32rpx;
+		color: $wordColor;
+		font-weight: 500;
+	}
+
+	.uni-h2 {
+		font-size: 32rpx;
+		color: $wordColor;
+		font-weight: bold;
+	}
+	.uni-subh2 {
+		font-size: 28rpx;
+		color: $wordColor;
+		font-weight: 500;
+	}
+
+	.uni-h3 {
+		font-size: 28rpx;
+		color: $wordColor;
+		font-weight: bold;
+	}
+	.uni-subh3 {
+		font-size: 24rpx;
+		color: $wordColor;
+		font-weight: 500;
+	}
+	
+	.uni-h4 {
+		font-size: 24rpx;
+		color: $wordColor;
+		font-weight: bold;
+	}
+	.uni-subh4 {
+		font-size: 20rpx;
+		color: $wordColor;
+		font-weight: 500;
+	}
+	//primary,text,tag 主要内容 文本内容 标签内容
+	.uni-content-primary{
+		font-size: 28rpx;
+		color: $wordColor;
+		font-weight: 500;
+	}
+	.uni-content-text{
+		font-size: 24rpx;
+		color: $wordColor;
+		font-weight: 400;
+	}
+	.uni-content-tag{
+		font-size: 20rpx;
+		color: $wordColor;
+		font-weight: 400;
+	}
+
+}
+
+
+[data-theme='blackGoldTheme'] .icon-content {
+	//large 大， medium 中等（默认为中等），small 小
+	.icon-content-large {
+		.imageIcon {
+			width: $font-or-wh22;
+			height: $font-or-wh22;
+		}
+		text {
+			color: #e9ecf0;
+		}
+	}
+	.icon-content-medium {
+		text {
+			color: #e9ecf0;
+		}
+	}
+	.icon-content-small {
+		text {
+			color: #e9ecf0;
+		}
+	}
+}
+// 黑金主题 ，搜索图标为颜色
+[data-theme='blackGoldTheme'] .iconfontsearch {
+	font-family: iconfont;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 500;
+	font-size: 16px;
+	color: #a2aab4 !important;
+}
+// 黑金主题  ，清除图标为黑白色
+[data-theme='blackGoldTheme'] .iconfontclear {
+	font-family: iconfont;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 500;
+	font-size: 16px;
+	color: #485665 !important;
+}
+//修改搜索框
+[data-theme='blackGoldTheme'] .uni-searchbar {
+	background-color: #28323d;
+	.uni-searchbar__box {
+		// border-color: $uni-border-color;
+		background-color: #1e262f;
+	}
+	.uni-searchbar__box-search-input {
+		color: #e9ecf0;
+		font-size: 14px;
+	}
+	.uni-searchbar__text-placeholder {
+		font-size: 12px;
+		color: #a2aab4;
+	}
+	.uni-searchbar__cancel {
+		//取消按钮的颜色
+		color: #e8b50c;
+		font-size: 16px;
+	}
+}
+//弹框 组件
+[data-theme='blackGoldTheme'] .one-button-dialog {
+	background-color: rgba(0, 0, 0, 0.5); //遮罩层颜色
+	.dialog_title {
+		color: #e9ecf0;
+	}
+	.buttonTextClass {
+		color: #e8b50c;
+	}
+	
+	.dialog-content--comfirmDialog {
+		//内容区域背景颜色
+		background-color: #1e262f !important;
+		.bodyContent{
+			border-bottom: 1rpx solid #28323D;
+			color: #e9ecf0;
+		}
+	}
+	
+	.dialog-content--inputDialog{
+		//内容区域背景颜色
+		background-color: #1e262f !important;
+		.dialog_body{
+			border: 1px solid #28323D;
+			.inputClass{
+				color: #e9ecf0;
+			}
+			input::-webkit-input-placeholder{   /* 使用webkit内核的浏览器 */
+				color:#EDEDED;
+			}
+			input:-moz-placeholder{    /* Firefox版本4-18 */
+				color: #EDEDED;
+			}              
+			input::-moz-placeholder{    /* Firefox版本19+ */
+				color: #EDEDED;
+			}              
+			input:-ms-input-placeholder{   /* IE浏览器 */
+				color: #EDEDED;
+			} 
+		}
+		.dialog_footer{
+			border-top: 1px solid #28323D;
+			.buttons{
+				.left{
+					border-right: 1px solid #28323D;
+				}
+			}
+		}
+	
+	}
+	
+	
+}
+
+//不规则的气泡组件
+[data-theme='blackGoldTheme'] .irregular-bubble {
+}
+//底部状态栏
+[data-theme='blackGoldTheme'] .tabbar {
+	background-color: #28323d;
+	.tabbar-item {
+		.tabbarActive {
+			color: #e8b50c;
+		}
+	}
+}
+
+// 头部菜单栏
+[data-theme='blackGoldTheme'] .top-tabbar-list {
+	background: #28323d;
+	box-shadow: 0rpx 6rpx 12rpx rgba(52, 52, 52, 0.08);
+	.top-tabbar-item {
+		color: #e9ecf0;
+		.active-text {
+			color: #e8b50c;
+		}
+	}
+}
+//功能按钮
+[data-theme = 'blackGoldTheme'] .functional-button{
+	//线性按钮样式
+	.func-button--linear.is-default{
+		color:#AE8809;
+		border: 1rpx solid #AE8809;
+	}
+	.func-button--linear.is-highlight{
+		border: 1rpx solid #E8B50C;
+		color:  #E8B50C;
+	}
+	.func-button--linear.is-disable{
+		border: 1rpx solid #A2A2A2;
+		color:  #A2A2A2;
+		cursor: no-drop;
+	}
+	//面性按钮样式
+	.func-button--surface.is-highlight{
+		color:#1E262F !important;
+		background-image: linear-gradient(to right, #FBD534 , #EFBA0C);
+	}
+	.func-button--surface.is-default{
+		color:#1E262F;
+		background-color: #AE8809;
+	}
+	.func-button--surface.is-disable{
+		color:#A2A2A2;
+		background-color: #1E262F;
+	}
+}
+//样例页面背景颜色
+[data-theme = 'blackGoldTheme'] .second{
+	background-color: #28323D;
+}
+
+// 头部Tab栏
+[data-theme='blackGoldTheme'] .switch-button {
+	.function-button-list {
+		background: #28323d;
+		.funtion-button-list-item {
+			color: #a2aab4;
+			.underline {
+				background: #1e262f;
+			}
+		}
+		.active-funtion-button-list-item {
+			background: linear-gradient(90deg, #fbd534 0%, #efba0c 100%);
+			color: #1e262f;
+		}
+
+		.isBackground {
+			background: none;
+			color: #e8b50c;
+
+			.underline {
+				background: #e8b50c;
+			}
+		}
+
+		.isBoxShadow {
+			box-shadow: 0rpx 6rpx 12rpx rgba(232, 181, 12, 0.15);
+		}
+	}
+	.isTabbarBack {
+		background-color: none;
+		border: 2rpx solid #e8b50c;
+	}
+}
+
+//开关组件
+[data-theme='blackGoldTheme'] .on-off-switch{
+	.switch-on-off{
+		.switch__core {
+			border: 1px solid #28323D;
+			background:  #28323D;
+			.switch__button {
+				background:  #E8B50C;
+			}
+		}
+	}
+	.switch-on-off.is-checked {
+		.switch__core {
+			border-color: #28323D;
+			background: #28323D;
+		}
+	}
+}
+
+///开关按钮页面背景颜色
+[data-theme='blackGoldTheme'] .content{
+	background-color: #1E262F;
+}
+
+///单选框选择边框为 默认边框1px ，点击选中以后为 5px
+[data-theme='blackGoldTheme'] .single-choice{
+	.single-choice-content{
+		border: 2rpx solid #E8B50C;
+	}
+	.single-choice-content.is-selected{
+		border: 10rpx solid #E8B50C;
+		background-color: #E9ECF0;
+	}
+}
+
+//黑金主题 卡片背景颜色
+[data-theme='blackGoldTheme'] .shadow-card{
+	background-color: #28323D;
+	box-shadow: 2rpx 2rpx 8rpx 4rpx rgba($color: #000000, $alpha: 0.08);
+}
+
+//云朵设置为背景图片 选中卡片
+[data-theme='blackGoldTheme']  .cloudContent{
+	background-color: #E8B50C;
+	.my-image{
+		background-image: url('/static/picture/card-cloud/gold-yes.png');
+		background-size: 100% 100%;
+	}
+	.rightWord{
+		.word{
+			color: #1E262F;
+		}
+		.detail{
+			color: #1E262F;
+			border: 1px solid #1E262F;
+		}
+	}
+}
+
+//云朵设置为背景图片 非选中
+[data-theme='blackGoldTheme']  .cloudContentNo{
+	background-color: #28323D;
+	.my-image{
+		background-image: url('/static/picture/card-cloud/gold-no.png');
+		background-size: 100% 100%;
+	}
+	.rightWord{
+		.word{
+			color:#E8B50C;
+		}
+		.detail{
+			color: #E8B50C;
+			border: 1px solid #E8B50C;
+		}
+	}
+}
+//三种背景图卡片
+[data-theme='blackGoldTheme']  .image-card{
+		
+	.image-card-content{
+		background-image: url('/static/picture/card-cloud/gold-bgpic.png');
+	}
+	.image-card-content.has-bee{
+		background-image: url('/static/picture/card-cloud/gold-bee.png');
+	}
+	.image-card-content.is-strategy{
+		background-image: url('/static/picture/card-cloud/card-bgpic-gold.png');
+	}
+		
+}
+
+//背景图片一长一短
+[data-theme='blackGoldTheme']  .countdown-pic-card{
+	.countdown-pic-card-box{
+		background-image: url('/static/picture/card-cloud/gold-short.png');
+	}
+	.countdown-pic-card-box.is-longbg{
+		background-image: url('/static/picture/card-cloud/gold-long.png');
+	}
+}
+//折叠与展开样例
+[data-theme='blackGoldTheme']  .pageContent{
+	.line{
+		background-color: #E8B50C;
+		.left{
+			color: #1E262F;
+		}
+		.rightIcon{
+			color: #1E262F;
+		}
+		
+	}
+	.word{
+		color: #E9ECF0 !important;
+	}
+}
+
+[data-theme='blackGoldTheme']  .pageData{
+	margin: 15px;
+	.line{
+		background-color: #E8B50C;
+		.left{
+			color: #FFFFFF;
+		}
+		.rightIcon{
+			color: #A2AAB4;
+		}
+	}
+	.lists{
+		border-bottom: 1px solid  #313C45;
+		background-color: #3A4552;
+		.choice{
+			border: 2rpx solid #E9ECF0;
+		}
+		.word{
+			color: #BEBFC4;
+		}
+		.choiceClicked{
+			border: 10rpx solid #E8B50C;
+			background-color: #FFFFFF;
+		}
+		.wordClicked{
+			color: #7B7B7B;
+		}
+	}
+}
+
+//表格例子页面
+[data-theme='blackGoldTheme'] .my-table{
+	.table-head,.table-body{
+		border-bottom: 1px solid #EDEDED;
+	}
+	.table-head{
+		color: #C1C1C1;
+	}
+	.table-body{
+		.col2{
+			color: #E8B50C;
+		}
+		.col, .col3{
+			color: #E9ECF0;
+		}
+	}
+}
+
+//更新app弹框
+[data-theme='blackGoldTheme'] .update-dialog{
+	background-color:rgba(0, 0, 0, 0.5);; 
+	.update-dialog-content{
+		background: url('/static/picture/updatebg/gold-update-bg.png') #28323D no-repeat;
+		background-size: 100% 100%;
+		.new-version{
+			color: #E8B50C;
+			border-bottom: 4rpx solid #E8B50C;
+		}
+		.fixed-word{
+			color: #E8B50C;
+		}
+		.center-mark{
+			.update-now-text{
+				color: #E8B50C;
+			}
+			.lineLeft{
+				background: linear-gradient(to right,#EBFFFD,#E8B50C);
+			}
+			.lineRight{
+				background: linear-gradient(to left,#EBFFFD,#E8B50C);
+			}
+		}
+		.update-content-text{
+			color: #E9ECF0;
+		}
+		.my-progress{
+			background-color: #E8B50C;
+			.percent{
+				background-color: #E8B50C;
+			}
+		}
+		.percent-text{
+			color: #E8B50C;
+		}
+	}
+}
+
+//输入框 组件
+[data-theme='blackGoldTheme'] .input-box{
+	.input-box-content{
+		.fix-content{
+			.labelStyle{
+				color: #E9ECF0;
+			}
+		}
+	}
+	.input-box-content.has-bg{
+		background-color: #28323D;
+		
+	}
+	
+}
+
+//反馈页面
+[data-theme='blackGoldTheme']  .feedBackPage{
+	background-color: #1E262F;
+	/deep/ .myplaceholder{
+		color: #92979A;
+	}
+	.feed_content{
+		background-color: #28323D;
+		textarea{
+			color: #1E262F;
+		}
+	}
+	.photos{
+		.picture{
+			background-color: #28323D;
+		}
+		.selectPicture{
+			background-color: #28323D;
+			.tipText{
+				color: #E8B50C;
+			}
+		}
+	}
+}
+
+//客服恢复反馈消息页面
+[data-theme='blackGoldTheme']  .msgPage{
+	.choice{
+		border: 2rpx solid #BEBFC4;
+	}
+	.choiceClicked{
+		border: 10rpx solid #E8B50C;
+		background-color: #FFFFFF;
+	}
+	.bottomConten{
+		color: #A2AAB4;
+	}
+	.right{
+		.top{
+			.title{
+				color: #E9ECF0;
+				
+			}
+			.time{
+				color: #A2AAB4;
+			}
+		}
+		
+	}
+	.buttonShow{
+		.left{
+			color: #E8B50C;
+		}
+	}
+}
+//公告列表页面
+[data-theme='blackGoldTheme']   .announcePage{
+	.contentArea{
+		.right{
+			.topTitle{
+				color: #E9ECF0;
+			}
+			.bottomTime{
+				color: #A2AAB4;
+			}
+		}
+	}
+}
+//新闻详情页面
+[data-theme='blackGoldTheme']  .detail-page{
+	.authorPosition{
+		.left{
+			color: #E8B50C;
+		}
+		.right{
+			color: #E9ECF0;
+		}
+	}
+	.contentPosition{
+		color: #6F7986;
+	}
+}
+
+//下拉菜单栏的背景颜色
+[data-theme='blackGoldTheme'] .bc-drop{
+	.bc-drop-content {
+		color: #E9ECF0;
+		background: #28323D;
+	}
+}

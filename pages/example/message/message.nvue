@@ -1,0 +1,255 @@
+<template>
+	<view>
+		<top-title-home>
+			<span class="iconfontTopLeftArr iconfanhui" @click='backLastPage()'></span>
+			<span class='title_text'>
+			   消息列表
+			</span>
+			<functional-button :title="editText" circle @click='editMsg'></functional-button>
+		</top-title-home>
+		<view class="msgPage">
+			<template v-if="edit">
+				<view v-for="index in 10" :key='index' >
+					<shadow-card  width="100%" padding="10px" class="line" >
+						<view class="contentArea" @click="intoDetail()">
+						    <view class="right">
+							  <view class="top">
+								  <text class="title">{{index}}基于2021-04-19 您反馈的消息...</text>
+								  <view class="time">04-19 13：22</view>
+							  </view>
+							  <text class="bottomConten">基于2021-04-19 您反馈的消息...基于2021-04-19 您反馈的消息...基于2021-04-19 您反馈的消息...</text>
+						    </view>
+						</view>
+					</shadow-card>
+				</view>
+			</template>
+			<template v-else>
+				<view  v-for="(item,index) in msgData" :key='item.i' >
+					<shadow-card  width="100%" padding="10px" class="line" >
+						<div class="contentArea2" ref="child">
+							<div class="choice" @click="clickItem(index)"></div>
+						    <view class="right">
+							  <view class="top">
+								  <text class="title">{{index}}{{item.title}}</text>
+								  <view class="time">{{item.time}}</view>
+							  </view>
+							  <text class="bottomConten">{{item.content}}</text>
+						    </view>
+						</div>
+					</shadow-card>
+					
+				</view>
+				
+			</template>
+			<shadow-card class="buttonShow" v-if="edit===false" padding="20px" >
+				<view class="left">
+					<div :class="isAll?'choiceClicked':'choice'" ref="allSelect" @click="all()"></div>
+					<text>全选</text>
+				</view>
+				<functional-button title="删除" circle type="surface" highlight></functional-button>
+			</shadow-card>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data(){
+			return{
+				edit: true,
+				editText:"编辑",
+				isclicked:[],
+				isAll:false,
+				msgData:[
+					{
+						title:'基于2021-04-19 您反馈的消息...',
+						time:'04-19 13：22',
+						content:'最近24小时，BTC爆仓2421.60万美元，E163.20.....',
+						i:123
+					},
+					{
+						title:'基于2021-04-19 您反馈的消息021-04-19 您反馈的消021-04-19 您反馈的消021-04-19 您反馈的消',
+						time:'04-19 13：23',
+						content:'最近24小时，BTC爆仓2421.60万美元，E163.20.....',
+						i:245
+					},
+					{
+						title:'基于2021-04-19 您反馈的消息...',
+						time:'04-19 13：24',
+						content:'最近24小时，BTC爆仓2421.60万美元，E163.20.....',
+						i:369
+					}
+				]
+			}
+		},
+		methods:{
+			editMsg(){
+				this.edit = ! this.edit;
+				if(this.edit){
+					this.editText='编辑';
+					this.isclicked = [];
+				} else {
+					this.editText='取消编辑';
+					
+				}
+				
+			},
+			intoDetail(){
+				console.log('开始跳转')
+				uni.navigateTo({url:'/pages/example/detail-page/detail-page'});
+			},
+			backLastPage() {
+				uni.navigateBack()
+			},
+			clickItem(i){
+				
+				
+				if(this.isclicked.indexOf(i) !=-1){//如果存在返回值的下标，不存在返回-1
+					this.$refs.child[i].childNodes[0].className='choice';
+					this.isclicked.pop(i);
+				} else{
+					this.isclicked.push(i);
+					this.$refs.child[i].childNodes[0].className='choiceClicked'
+				}
+				console.log(this.isclicked.length == this.msgData.length,
+				this.isclicked,'长度',
+				this.isclicked.length, this.msgData.length)
+				if(this.isclicked.length == this.$refs.child.length){
+					this.$refs.allSelect.className = 'choiceClicked';
+				} else {
+					this.$refs.allSelect.className = 'choice';
+				}
+			},
+			all(){ //全选
+				console.log('全选',this.$refs.child.length)
+				this.isAll = !this.isAll;
+				if(this.isAll){
+					for(var i = 0; i< this.$refs.child.length;i++){
+						this.$refs.child[i].childNodes[0].className='choiceClicked'
+					}
+				} else {
+					for(var i = 0; i< this.$refs.child.length;i++){
+						this.$refs.child[i].childNodes[0].className='choice'
+					}
+				}
+				
+			}
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+@import '../../../common/icons/iconfont.css';
+
+.iconfontTopLeftArr {
+	font-family: iconfont;
+	text-decoration: none;
+	text-align: center;
+	margin-right: 10px;
+}
+
+.msgPage{
+	margin-top: 20px;
+	margin-left: 15px;
+	margin-right: 15px;
+	position: relative;
+	height: 85vh;
+	.line{
+		margin-bottom: 10px;
+	}
+	.choice{
+		width: 36rpx;
+		height: 36rpx;
+		box-sizing:border-box;
+		// border: 2rpx solid #BEBFC4;
+		border-radius: 50%;
+		margin-right: 10rpx;
+	}
+	.choiceClicked{
+		width: 36rpx;
+		height: 36rpx;
+		box-sizing:border-box;
+		// border: 10rpx solid #2EBEF3;
+		border-radius: 50%;
+		margin-right: 10rpx;
+	}
+	.bottomConten{
+		width: 100%;
+		font-size: 24rpx;
+		overflow:hidden;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+		margin-top: 10rpx;
+		// color: #BEBFC4;
+	}
+	.right{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		.top{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			.title{
+				width: 450rpx;
+				font-size: 28rpx;
+				font-weight: bold;
+				overflow:hidden;
+				text-overflow:ellipsis;
+				white-space:nowrap;
+				// color: #1E262F;
+				
+			}
+			.time{
+				font-size: 20rpx;
+				// color: #BEBFC4;
+			}
+		}
+		
+	}
+	.contentArea{
+		.right{
+			width: 100%;
+			.top{
+				width: 100%;
+			}
+			
+		}
+		
+	}
+	.buttonShow{
+		position: absolute;
+		bottom: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		.left{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+	
+	.contentArea2{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		.right{
+			width: 90%;
+			.top{
+				width: 100%;
+			}
+			
+		}
+		
+	}
+	
+}
+</style>

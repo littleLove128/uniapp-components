@@ -1,0 +1,71 @@
+<template>
+	<div>
+		<top-title-arrow  centerTitle title="输入框">
+		</top-title-arrow>
+		<view style="margin: 15px;">
+			<input-box  icon="iconyonghuming" labelText="手机号">
+				<input type="text" value="" placeholder="请输入手机号"/>
+				<functional-button :title="buttonText" type="surface" highlight  circle></functional-button>
+			</input-box>
+		</view>
+		<view style="margin: 15px;">
+			<input-box  icon="iconmima" labelText="密码">
+				<input :type="inputType" value="" placeholder="请输入密码"/>
+				<text @click="closeEye" :class="[eyeOpen?'iconfont iconkejian':'iconfont iconbukejian']" style="width: 100rpx;"></text>
+			</input-box>
+		</view>
+		<view style="margin: 15px;">
+			<input-box bgColor >
+				<input type="text" value="" placeholder="请输入密码"/>
+				<text class="iconfont iconkejian" style="width: 100rpx;"></text>
+			</input-box>
+		</view>
+	</div>
+</template>
+
+<script>
+	export default {
+		data(){
+			return {
+				buttonText:'获取验证码',
+				eyeOpen:false,
+				inputType:'password'
+			}
+		},
+		methods:{
+			closeEye(){
+				this.eyeOpen = !this.eyeOpen;
+				if(this.eyeOpen){
+					this.inputType = 'text';
+				} else {
+					this.inputType = 'password';
+				}
+			}
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	@import  '../../../common/icons/iconfont.css';
+	input{
+		// width: 50%;
+	}
+input::-webkit-input-placeholder{   /* 使用webkit内核的浏览器 */
+	// color: #BEBFC4;
+	font-size: 24rpx;
+	text-indent: 10rpx;
+}
+input:-moz-placeholder{ 
+	font-size: 24rpx;
+	text-indent: 10rpx;
+}              
+input::-moz-placeholder{
+	font-size: 24rpx;
+	text-indent: 10rpx;
+}              
+input:-ms-input-placeholder{   
+	text-indent: 10rpx;
+	font-size: 24rpx;
+	text-indent: 10rpx;
+} 
+</style>

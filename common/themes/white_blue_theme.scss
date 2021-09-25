@@ -1,0 +1,830 @@
+$font-or-wh22: 44rpx;
+$theme-main-color: #2ebef3; //主题主色
+$theme-main-text-color: #1e262f; //文字主色
+$theme-bg-color: #ffffff; //背景主色
+$theme-bg1-color: #e8eef1; //头部Tab栏颜色
+$theme-secondly-text-color: #bebfc4; //副文字颜色
+$theme-line-segment-color: #ededed; //线段颜色
+$theme-search-color: #a3a4aa;
+$theme-grey-iconfont: #cccccc;
+$theme-title-color: #111e3e;
+$theme-boxshow-color: rgba(52, 52, 52, 0.08);
+$theme-boxshow2-color: rgba(46, 190, 243, 0.15);
+$theme-searchbar-bg: #f2f4f7;
+$theme-mask-color: rgba(0, 0, 0, 0.5); //遮罩层颜色
+$theme-bg2: rgba(46, 190, 243, 0.08);
+$theme-text-color: #999999;
+$button-color:#87DAF9; //按钮颜色
+$button-forbid:#BEBFC4; //按钮禁用颜色
+$button-surface-defalut :#E5F7FE; //按钮默认颜色
+
+[data-theme='whiteBlueTheme'] body,
+[data-theme='whiteBlueTheme'] .example-body {
+	background-color: $theme-bg-color !important;
+}
+
+// // 白蓝主题 ，图标为蓝色
+[data-theme='whiteBlueTheme'] .iconfont {
+	font-family: iconfont;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 500;
+	font-size: 32rpx;
+	color: $theme-main-color !important;
+}
+
+// // 白蓝主题 ，图标为 黑色
+[data-theme='whiteBlueTheme'] .iconfontWihte {
+	font-family: iconfont;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 500;
+	font-size: 32rpx;
+	color: $theme-main-text-color !important;
+}
+// // 所有主题 ，图标都为 白色
+[data-theme='whiteBlueTheme'] .iconAllWhite {
+	font-family: iconfont;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 500;
+	font-size: 32rpx;
+	color: $theme-bg-color !important;
+}
+//通过顶部标题  含返回键
+[data-theme='whiteBlueTheme'] .top-title-arrow {
+	background-color: $theme-bg-color !important;
+	box-shadow: 4rpx 4rpx 4rpx $theme-boxshow-color;
+	// height: 44px;
+	height: 88rpx;
+	span {
+		color: $theme-main-text-color !important;
+		// font-size: 16px;
+		font-size: 32rpx;
+	}
+	span:nth-child(2) {
+		font-weight: bold;
+	}
+}
+//顶部标题 首页顶部显示 自定义 传入的数据总是 以 space-between 来显示
+[data-theme='whiteBlueTheme'] .top-title-home {
+	background-color: $theme-bg-color;
+	// height: 47px;
+	height: 94rpx;
+	box-shadow: 4rpx 4rpx 4rpx $theme-boxshow-color;
+	.title_text {
+		color: $theme-main-text-color;
+		font-size: 32rpx;
+		font-weight: bold;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		// height: 47px;
+		height: 94rpx;
+		width: 100%;
+	}
+}
+//顶部标题 左边是两行的，左右靠边显示
+[data-theme='whiteBlueTheme'] .top-title-two-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 120rpx;
+	padding-left: 15px;
+	padding-right: 15px;
+	.showRow {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 10rpx;
+		color: $theme-main-text-color;
+		font-size: 40rpx;
+		font-weight: bold;
+		image {
+			margin-right: 10rpx;
+		}
+	}
+	.subtitle {
+		color: $theme-main-text-color;
+		font-size: 24rpx;
+	}
+}
+
+//修改 uni-list-item列表样式
+[data-theme='whiteBlueTheme'] .uni-list-item {
+	background-color: $theme-bg-color;
+	font-size: 34rpx;
+	color: $theme-main-text-color !important;
+	.uni-list--border {
+		border-top-color: $theme-line-segment-color;
+	}
+	.uni-list--border:after {
+		background-color: $theme-line-segment-color;
+	}
+	.uni-list-item__content {
+		color: $theme-main-text-color !important;
+	}
+	.uni-list-item__content-title {
+		font-size: 34rpx;
+		color: $theme-main-text-color;
+	}
+	.uni-list-item__content-note {
+		color: $theme-secondly-text-color;
+		font-size: 28rpx;
+	}
+	.uni-list-item__extra-text {
+		//列表项中和箭头靠近的文字样式
+		color: $theme-secondly-text-color;
+		font-size: 32rpx;
+		// font-size: 16px;
+	}
+	.rightPictrue {
+		width: 56rpx;
+		height: 56rpx;
+	}
+	.iconAllWhite {
+		font-family: iconfont;
+		text-decoration: none;
+		text-align: center;
+		font-weight: 500;
+		font-size: 22rpx;
+		color: $theme-bg-color !important;
+	}
+	.selected {
+		//列表为选中的样式
+		width: $font-or-wh22;
+		height: $font-or-wh22;
+		border-radius: 22rpx;
+		background-color: $theme-main-color;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.unselected {
+		//列表为选中的样式
+		width: $font-or-wh22;
+		height: $font-or-wh22;
+		border-radius: 22rpx;
+		border:1rpx solid $theme-main-color;		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+//竖线+标题—+箭头布局--组件
+[data-theme='whiteBlueTheme'] .left-border-word {
+	color: $theme-title-color;
+	background-color: $theme-bg-color;
+	.left {
+	}
+	.line {
+		background-color: $theme-main-color;
+	}
+}
+//竖线+标题—+箭头布局 --- 样例
+[data-theme='whiteBlueTheme'] .words {
+	box-shadow: 2rpx 2rpx 6rpx 6rpx $theme-boxshow-color;
+	border-radius: 20rpx;
+	background-color: $theme-bg-color;
+	display: flex;
+	flex-direction: column;
+}
+//修改组件 uni-title 样式
+$wordColor:$theme-main-text-color;
+[data-theme = 'whiteBlueTheme'] .uni-title__box{
+	.uni-title__base {
+		font-size: 30rpx;
+		color: $wordColor;
+		font-weight: 500;
+	}
+
+	.uni-h1 {
+		font-size: 36rpx;
+		color: $wordColor;
+		font-weight: bold;
+		line-height: 54rpx;
+	}
+	.uni-subh1 {
+		font-size: 32rpx;
+		color: $wordColor;
+		font-weight: 500;
+	}
+
+	.uni-h2 {
+		font-size: 32rpx;
+		color: $wordColor;
+		font-weight: bold;
+	}
+	.uni-subh2 {
+		font-size: 28rpx;
+		color: $wordColor;
+		font-weight: 500;
+	}
+
+	.uni-h3 {
+		font-size: 28rpx;
+		color: $wordColor;
+		font-weight: bold;
+	}
+	.uni-subh3 {
+		font-size: 24rpx;
+		color: $wordColor;
+		font-weight: 500;
+	}
+
+	.uni-h4 {
+		font-size: 24rpx;
+		color: $wordColor;
+		font-weight: bold;
+	}
+	.uni-subh4 {
+		font-size: 20rpx;
+		color: $wordColor;
+		font-weight: 500;
+	}
+	//primary,text,tag 主要内容 文本内容 标签内容
+	.uni-content-primary{
+		font-size: 28rpx;
+		color: $wordColor;
+		font-weight: 500;
+	}
+	.uni-content-text{
+		font-size: 24rpx;
+		color: $wordColor;
+		font-weight: 400;
+	}
+	.uni-content-tag{
+		font-size: 20rpx;
+		color: $wordColor;
+		font-weight: 400;
+	}
+
+}
+
+
+[data-theme='whiteBlueTheme'] .icon-content {
+	//large 大， medium 中等（默认为中等），small 小
+	.icon-content-large {
+		.imageIcon {
+			width: $font-or-wh22 !important;
+			height: $font-or-wh22 !important;
+		}
+		text {
+			color: $theme-main-text-color;
+		}
+	}
+	.icon-content-medium {
+		text {
+			color: $theme-main-text-color;
+		}
+	}
+	.icon-content-small {
+		text {
+			color: $theme-main-text-color;
+		}
+	}
+}
+
+// 白蓝主题 ，搜索图标为灰色
+[data-theme='whiteBlueTheme'] .iconfontsearch {
+	font-family: iconfont;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 500;
+	font-size: 32rpx;
+	color: $theme-search-color !important;
+}
+// 白蓝主题 ，清除图标为灰色
+[data-theme='whiteBlueTheme'] .iconfontclear {
+	font-family: iconfont;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 500;
+	font-size: 32rpx;
+	color: $theme-grey-iconfont !important;
+}
+//修改搜索框
+[data-theme='whiteBlueTheme'] .uni-searchbar {
+	background-color: $theme-bg-color; //搜索框区域背景颜色
+	.uni-searchbar__box {
+		// border-color: $uni-border-color;
+		background-color: $theme-searchbar-bg; //搜索输入框背景颜色
+	}
+	.uni-searchbar__box-icon-search {
+		color: $theme-search-color !important;
+	}
+	.uni-searchbar__box-search-input {
+		//输入内容的字体大小颜色
+		color: $theme-main-text-color;
+		font-size: 14px;
+	}
+	.uni-searchbar__text-placeholder {
+		//占位文字的字体大小颜色
+		font-size: 12px;
+		color: $theme-search-color;
+	}
+	.uni-searchbar__cancel {
+		//取消按钮的颜色
+		color: $theme-main-color;
+		font-size: 16px;
+	}
+}
+//弹框 组件
+[data-theme='whiteBlueTheme'] .one-button-dialog {
+	background-color: $theme-mask-color; //遮罩层颜色
+	.dialog_title {
+		color: $theme-title-color;
+	}
+	.buttonTextClass {
+		color: $theme-main-color;
+	}
+	.dialog-content--comfirmDialog {
+		//内容区域背景颜色
+		background-color: $theme-bg-color !important;
+		.bodyContent{
+			border-bottom: 2rpx solid $theme-line-segment-color;
+			color: $theme-title-color;
+		}
+	}
+	
+	.dialog-content--inputDialog{
+		//内容区域背景颜色
+		background-color: $theme-bg-color !important;
+		.dialog_body{
+			border: 1px solid $button-forbid;
+			.inputClass{
+				color: $theme-main-text-color;
+				
+			}
+			input::-webkit-input-placeholder{   /* 使用webkit内核的浏览器 */
+				color: $button-forbid;
+			}
+			input:-moz-placeholder{    /* Firefox版本4-18 */
+				color: $button-forbid;
+			}              
+			input::-moz-placeholder{    /* Firefox版本19+ */
+				color: $button-forbid;
+			}              
+			input:-ms-input-placeholder{   /* IE浏览器 */
+				color: $button-forbid;
+			} 
+		}
+		.dialog_footer{
+			border-top: 1px solid $theme-line-segment-color;
+			.buttons{
+				.left{
+					border-right: 1px solid $theme-line-segment-color;
+				}
+			}
+		}
+	}
+}
+
+//不规则的气泡组件
+[data-theme='whiteBlueTheme'] .inlayer {
+	border: 1px $theme-main-color solid;
+}
+[data-theme='whiteBlueTheme'] .inlayer:before {
+	border-top: 15px solid $theme-main-color;
+}
+[data-theme='whiteBlueTheme'] .inlayer:after {
+	border-top: 14px solid $theme-bg-color;
+}
+
+//uni-popup-dialog 更改已有的组件
+
+//侧边栏
+[data-theme='whiteBlueTheme'] .uni-drawer {
+	.uni-drawer__content {
+		background-color: $theme-bg-color;
+	}
+	.side-bar-list {
+		.side-bar-item {
+			.text {
+				color: $theme-main-text-color;
+			}
+		}
+		.active-side-bar-item {
+			background: #e5f7fe;
+			.text {
+				color: $theme-main-color;
+			}
+		}
+	}
+
+	.footer {
+		background: #e5f7fe;
+		.theme,
+		.lang {
+			border: 1rpx solid $theme-main-color;
+			.en, .cn {
+				color: $theme-main-color;
+			}
+		}
+		.theme,
+		.lang {
+			.block {
+				background: $theme-bg2;
+				border-right: 1rpx solid $theme-main-color;
+			}
+			.moonBlock, 
+			.enBlock {
+				border-left: 2rpx solid $theme-main-color;
+			}
+		}
+	}
+}
+//底部状态栏
+[data-theme='whiteBlueTheme'] .tabbar {
+	background-color: $theme-bg-color;
+	.tabbar-item {
+		.tabbarActive {
+			color: $theme-main-color;
+		}
+	}
+}
+
+// 头部菜单栏
+[data-theme='whiteBlueTheme'] .top-tabbar-list {
+	box-shadow: 0px 3px 6px $theme-boxshow-color;
+	.top-tabbar-item {
+		color: $theme-main-text-color;
+		.active-text {
+			color: $theme-main-color;
+		}
+	}
+}
+
+//功能按钮
+[data-theme = 'whiteBlueTheme'] .functional-button{
+	//线性按钮样式
+	.func-button--linear.is-default{
+		color:$button-color;
+		border: 1rpx solid $button-color;
+	}
+	.func-button--linear.is-highlight{
+		border: 1rpx solid $theme-main-color;
+		color:  $theme-main-color;
+	}
+	.func-button--linear.is-disable{
+		border: 1rpx solid $button-forbid;
+		color: $button-forbid;
+		cursor: no-drop;
+	}
+	//面性按钮样式
+	.func-button--surface.is-highlight{
+		color:$theme-bg-color !important;
+		background-color: $theme-main-color !important;
+	}
+	.func-button--surface.is-default{
+		color:$button-color;
+		background-color: $button-surface-defalut;
+	}
+	.func-button--surface.is-disable{
+		color:$theme-bg-color;//白色
+		background-color: $button-forbid;
+	}
+}
+// 头部Tab栏
+[data-theme='whiteBlueTheme'] .switch-button {
+	.function-button-list {
+		background: $theme-bg1-color;
+		.funtion-button-list-item {
+			color: $theme-text-color;
+			.underline {
+				background: $theme-bg-color;
+			}
+		}
+		.active-funtion-button-list-item {
+			background-color: $theme-main-color;
+			color: $theme-bg-color;
+		}
+
+		.isBackground {
+			background: none;
+			color: $theme-main-color;
+
+			.underline {
+				background: $theme-main-color;
+			}
+		}
+
+		.isBoxShadow {
+			box-shadow: 0rpx 6rpx 12rpx $theme-boxshow2-color;
+		}
+	}
+	.isTabbarBack {
+		background-color: $theme-bg-color;
+		border: 2rpx solid $theme-main-color;
+	}
+}
+
+//开关组件
+[data-theme='whiteBlueTheme'] .on-off-switch{
+	.switch-on-off{
+		.switch__core {
+			border: 1px solid #dcdfe6;
+			background: #2EBEF3;
+			.switch__button {
+				background: #fff;
+			}
+		}
+	}
+	.switch-on-off.is-checked {
+		.switch__core {
+			border-color: #2EBEF3;
+			background: #2EBEF3;
+		}
+	}
+}
+
+
+///开关按钮页面背景颜色
+[data-theme='whiteBlueTheme'] .content{
+	background-color: #EFEFEF;
+}
+
+///单选框选择边框为 默认边框1px ，点击选中以后为 5px
+[data-theme='whiteBlueTheme'] .single-choice{
+	.single-choice-content{
+		border: 2rpx solid #BEBFC4;
+	}
+	.single-choice-content.is-selected{
+		border: 10rpx solid #BEBFC4;
+		background-color: #FFFFFF;
+	}
+}
+
+//白蓝主题 卡片背景颜色为白色，阴影为 黑色的 0.08
+[data-theme='whiteBlueTheme'] .shadow-card{
+	background-color: #FFFFFF;
+	box-shadow: 2rpx 2rpx 8rpx 4rpx rgba($color: #000000, $alpha: 0.08);
+}
+
+//云朵设置为背景图片 选中卡片 样例页面
+[data-theme='whiteBlueTheme']  .cloudContent{
+	background-color: #2EBEF3;
+	.my-image{
+		background-image: url('/static/picture/card-cloud/blue-yes.png');
+		background-size: 100% 100%;
+	}
+	.rightWord{
+		.word{
+			color: #FFFFFF;
+		}
+		.detail{
+			color: #FFFFFF;
+			border: 1px solid #FFFFFF;
+		}
+	}
+}
+//云朵设置为背景图片 非选中 样例页面
+[data-theme='whiteBlueTheme']  .cloudContentNo{
+	background-color: #FFFFFF;
+	.my-image{
+		background-image: url('/static/picture/card-cloud/blue-no.png');
+		background-size: 100% 100%;
+	}
+	.rightWord{
+		.word{
+			color:#2EBEF3;
+		}
+		.detail{
+			color: #2EBEF3;
+			border: 1px solid #2EBEF3;
+		}
+	}
+}
+
+//三种背景图卡片
+[data-theme='whiteBlueTheme']  .image-card{
+		
+	.image-card-content{
+		background-image: url('/static/picture/card-cloud/blue-bgpic.png');
+	}
+	.image-card-content.has-bee{
+		background-image: url('/static/picture/card-cloud/blue-bee.png');
+	}
+	.image-card-content.is-strategy{
+		background-image: url('/static/picture/card-cloud/card-bgpic-blue.png');
+	}
+		
+}
+
+//背景图片一长一短
+[data-theme='whiteBlueTheme']  .countdown-pic-card{
+	.countdown-pic-card-box{
+		background-image: url('/static/picture/card-cloud/blue-short.png');
+	}
+	.countdown-pic-card-box.is-longbg{
+		background-image: url('/static/picture/card-cloud/blue-long.png');
+	}
+}
+
+//折叠与展开样例
+[data-theme='whiteBlueTheme']  .pageContent{
+	.line{
+		background-color: #2EBEF3;
+		.left{
+			color: #FFFFFF;
+		}
+		.rightIcon{
+			color: #FFFFFF;
+		}
+		
+	}
+	.word{
+		color: #1E262F;
+	}
+}
+
+//折叠与展开选择样例
+[data-theme='whiteBlueTheme']  .pageData{
+	margin: 15px;
+	.line{
+		background-color: #2EBEF3;
+		.left{
+			color: #FFFFFF;
+		}
+		.rightIcon{
+			color: #FFFFFF;
+		}
+	}
+	.lists{
+		border-bottom: 1px solid  #EDEDED;
+		background-color: #FFFFFF;
+		.choice{
+			border: 2rpx solid #BEBFC4;
+		}
+		.word{
+			color: #BEBFC4;
+		}
+		.choiceClicked{
+			border: 10rpx solid #2EBEF3;
+			background-color: #FFFFFF;
+		}
+		.wordClicked{
+			color: #2EBEF3;
+		}
+	}
+}
+
+//表格例子页面
+[data-theme='whiteBlueTheme'] .my-table{
+	.table-head,.table-body{
+		border-bottom: 1px solid #EDEDED;
+	}
+	.table-head{
+		color: #666666;
+	}
+	.table-body{
+		.col2{
+			color: #2EBEF3;
+		}
+		.col, .col3{
+			color: #1E262F;
+		}
+	}
+}
+//更新app弹框
+[data-theme='whiteBlueTheme'] .update-dialog{
+	background-color: $theme-mask-color; 
+	.update-dialog-content{
+		background: url('/static/picture/updatebg/blue-update-bg.png') #FFFFFF no-repeat;
+		background-size: 100% 100%;
+		.new-version{
+			color: #111E3E;
+			border-bottom: 4rpx solid #012639;
+		}
+		.fixed-word{
+			color: #111E3E;
+		}
+		.center-mark{
+			.update-now-text{
+				color: #787C84;
+			}
+			.lineLeft{
+				background: linear-gradient(to right,#EBFFFD,#787C84);
+			}
+			.lineRight{
+				background: linear-gradient(to left,#EBFFFD,#787C84);
+			}
+		}
+		.update-content-text{
+			color: #111E3E;
+		}
+		.my-progress{
+			background-color: #E7EBEE;
+			.percent{
+				background-color: #2EBEF3;
+			}
+		}
+		.percent-text{
+			color: #111E3E;
+		}
+	}
+}
+
+//输入框 组件
+[data-theme='whiteBlueTheme'] .input-box{
+	.input-box-content{
+		.fix-content{
+			.labelStyle{
+				color: #1E262F;
+			}
+		}
+	}
+	.input-box-content.has-bg{
+		background-color: #E8EEF1;
+		
+	}
+	
+}
+
+//反馈页面
+[data-theme='whiteBlueTheme']  .feedBackPage{
+	background-color: #F5F6F7;
+	/deep/ .myplaceholder{
+		color: #92979A;
+	}
+	.feed_content{
+		background-color: #FFFFFF;
+		textarea{
+			color: #1E262F;
+		}
+	}
+	.photos{
+		.picture{
+			background-color: #FFFFFF;
+		}
+		.selectPicture{
+			background-color: #FFFFFF;
+			.tipText{
+				color: #2EBEF3;
+			}
+		}
+	}
+}
+
+//客服恢复反馈消息页面
+[data-theme='whiteBlueTheme']  .msgPage{
+	.choice{
+		border: 2rpx solid #BEBFC4;
+	}
+	.choiceClicked{
+		border: 10rpx solid #2EBEF3;
+		background-color: #FFFFFF;
+	}
+	.bottomConten{
+		color: #BEBFC4;
+	}
+	.right{
+		.top{
+			.title{
+				color: #1E262F;
+				
+			}
+			.time{
+				color: #BEBFC4;
+			}
+		}
+		
+	}
+}
+
+//公告列表页面
+[data-theme='whiteBlueTheme']   .announcePage{
+	.contentArea{
+		.right{
+			.topTitle{
+				color: #1E262F;
+			}
+			.bottomTime{
+				color: #BEBFC4;
+			}
+		}
+	}
+}
+//新闻详情页面
+[data-theme='whiteBlueTheme']  .detail-page{
+	.authorPosition{
+		.left{
+			color: #2EBEF3;
+		}
+		.right{
+			color: #BEBFC4;
+		}
+	}
+	.contentPosition{
+		color: #1E262F;
+	}
+}
+//下拉菜单栏的背景颜色
+[data-theme='whiteBlueTheme'] .bc-drop{
+	.bc-drop-content {
+		color: #BEBFC4;
+		background: #FFFFFF;
+	}
+}

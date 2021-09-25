@@ -1,0 +1,37 @@
+<template>
+	<div class="box">
+		<top-title-arrow isFixed>
+			<text>背景为颜色的卡片页面</text>
+		</top-title-arrow>
+		<div class="box1">
+			<view style="margin: 20px auto;">
+				<shadow-card>
+					<text>内容区域默认padding 为15px</text>
+				</shadow-card>
+			</view>
+			<view style="margin: 15px auto;">
+				<shadow-card width="680rpx" padding="10px">
+					<text>设置卡片 padding 为10px 宽度为 680rpx </text>
+				</shadow-card>
+			</view>
+		</div>
+	</div>
+</template>
+
+<script>
+	export default {
+		methods:{
+			curClick(){
+				
+			}
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+.box1{
+	margin: 15px;
+}
+
+	
+</style>

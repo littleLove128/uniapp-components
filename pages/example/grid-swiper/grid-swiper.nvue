@@ -1,0 +1,240 @@
+<template>
+	<div>
+		<top-title-arrow isFixed>
+			<text>可滑动的 grid</text>
+		</top-title-arrow>
+		<view style="margin-top: 30rpx;"></view>
+		<left-border-word title="文字+图片轮播"></left-border-word>
+		<view style="margin-top: 30rpx;"></view>
+		<view class="example-body">
+			<!-- 因为swiper特性的关系，请指定swiper的高度 ，swiper的高度并不会被内容撑开-->
+			<swiper class="swiper" :indicator-dots="true">
+				<swiper-item>
+					<uni-grid  :column="4" :highlight="true" @change="change">
+						<uni-grid-item v-for="(item, index) in list" :index="index" :key="index">
+							<view class="grid-item-box">
+								<image :src="item.url" class="image" mode="aspectFill" />
+								<text class="text">{{ item.text }}</text>
+							</view>
+						</uni-grid-item>
+					</uni-grid>
+					<uni-grid  :column="4" :highlight="true" @change="change">
+						<uni-grid-item v-for="(item, index) in list" :index="index" :key="index">
+							<view class="grid-item-box">
+								<image :src="item.url" class="image" mode="aspectFill" />
+								<text class="text">{{ item.text }}</text>
+							</view>
+						</uni-grid-item>
+					</uni-grid>
+					<uni-grid  :column="3" :highlight="true" @change="change">
+						<uni-grid-item v-for="(item, index) in list" :index="index" :key="index">
+							<view class="grid-item-box">
+								<image :src="item.url" class="image" mode="aspectFill" />
+								<text class="text">{{ item.text }}</text>
+							</view>
+						</uni-grid-item>
+					</uni-grid>
+				</swiper-item>
+				<swiper-item>
+					<uni-grid :column="4" :highlight="true" @change="change">
+						<uni-grid-item v-for="(item, index) in list" :index="index" :key="index">
+							<view class="grid-item-box">
+								<image :src="item.url" class="image" mode="aspectFill" />
+								<text class="text">{{ item.text }}</text>
+							</view>
+						</uni-grid-item>
+					</uni-grid>
+				</swiper-item>
+				
+			</swiper>
+		
+		</view>
+		<view style="margin-top: 30rpx;"></view>
+		<left-border-word title="纯图片轮播居中显示(左右两边有距离)"></left-border-word>
+		<view style="margin-top: 30rpx;"></view>
+		<view class="example-body">
+			<!-- 因为swiper特性的关系，请指定swiper的高度 ，swiper的高度并不会被内容撑开-->
+			<swiper class="swiper2" :indicator-dots="true">
+				<swiper-item>
+					<uni-grid  :column="1" :highlight="true" @change="change">
+						<uni-grid-item  >
+							<view class="grid-item-box2">
+								<image :src="url" class="image2" mode="aspectFill" />
+							</view>
+						</uni-grid-item>
+					</uni-grid>
+						<uni-grid-item v-for="(item, index) in list" :index="index" :key="index">
+							<view class="grid-item-box">
+								<image :src="item.url" class="image" mode="aspectFill" />
+								<text class="text">{{ item.text }}</text>
+							</view>
+						</uni-grid-item>
+					</uni-grid>
+				</swiper-item>
+				<swiper-item>
+					<uni-grid  :column="1" :highlight="true" @change="change">
+						<uni-grid-item >
+							<view class="grid-item-box2">
+								<image :src="url" class="image2" mode="aspectFill" />
+							</view>
+						</uni-grid-item>
+					</uni-grid>
+				</swiper-item>
+			</swiper>
+		</view>
+		<view style="margin-top: 30rpx;"></view>
+		<left-border-word title="纯图片轮播占满屏幕宽度(左右两边无距离)"></left-border-word>
+		<view style="margin-top: 30rpx;"></view>
+		<view class="example-body">
+			<!-- 因为swiper特性的关系，请指定swiper的高度 ，swiper的高度并不会被内容撑开-->
+			<swiper class="swiper3" :indicator-dots="true">
+				<swiper-item>
+					<image :src="url" class="image3" mode="aspectFill" />
+				</swiper-item>
+				<swiper-item>
+					<image :src="url" class="image3" mode="aspectFill" />
+				</swiper-item>
+			</swiper>
+		
+		</view>
+		<view style="margin-top: 30rpx;"></view>
+		<left-border-word title="overflow  轮播图"></left-border-word>
+		<view style="margin-top: 30rpx;"></view>
+		<view class="example-body">
+			<!-- 因为swiper特性的关系，请指定swiper的高度 ，swiper的高度并不会被内容撑开-->
+			<swiper autoplay='true' circular='true' previous-margin='20px' next-margin='15px' class="swiper4" :indicator-dots="true">
+				<swiper-item>
+					<image src="/static/picture/grid-page-pic/banner.png" class="image4" mode="aspectFill" />
+				</swiper-item>
+				<swiper-item>
+					<image src="/static/picture/grid-page-pic/banner1.png" class="image4" mode="aspectFill" />
+				</swiper-item>
+				<swiper-item>
+					<image src="/static/picture/grid-page-pic/banner2.png" class="image4" mode="aspectFill" />
+				</swiper-item>
+			</swiper>
+		
+		</view>
+		<view style="margin-top: 30rpx;"></view>
+	</div>
+</template>
+
+<script>
+	export default {
+		data(){
+			return{
+				list:[
+					{
+						url: '/static/picture/grid-page-pic/gri1.png',
+						text: '金刚区',
+						badge: '0',
+						type: "primary"
+					},
+					{
+						url: '/static/picture/grid-page-pic/gri2.png',
+						text: '戒烟日记',
+						badge: '0',
+						type: "primary"
+					},
+					{
+						url: '/static/picture/grid-page-pic/gri3.png',
+						text: '戒烟社区',
+						badge: '0',
+						type: "primary"
+					},
+					{
+						url: '/static/picture/grid-page-pic/gri4.png',
+						text: '数据统计',
+						badge: '0',
+						type: "primary"
+					},
+				],
+				url:'/static/picture/grid-page-pic/banner.png'
+			}
+		},
+		methods:{
+			change(e) {
+				let {
+					index
+				} = e.detail
+				this.list[index].badge && this.list[index].badge++
+			
+				uni.showToast({
+					title: `点击第${index+1}个宫格`,
+					icon: 'none'
+				})
+			},
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	.grid-item-box {
+		// flex: 1;
+		// position: relative;
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 15px 0;
+		text{
+			margin-top: 5px;
+			color: #383C3D;
+			font-size: 28rpx;
+		}
+	}
+	.image{
+		width: 82rpx;
+		height: 82rpx;
+	}
+	.image2{
+		width: 100%;
+	}
+	.swiper3{
+		width: 100%;
+		height: 200px;
+		margin: 15px auto;
+		image{
+			width: 100%;
+		}
+	}
+	.swiper2{
+		width: 95%;
+		margin: 15px auto;
+	}
+	.grid-item-box2{
+		padding: 15px;
+	}
+	
+	.grid-dot {
+		position: absolute;
+		top: 5px;
+		right: 15px;
+	}
+	.swiper {
+		height: 300px;
+	}
+	.swiper4{
+		width: 100%;
+		height: 130px;
+		.grid-item-box4{
+			padding: 10px;
+		}
+	}
+		
+	/* #ifdef H5 */
+	@media screen and (min-width: 768px) and (max-width: 1425px) {
+		.swiper {
+			height: 630px;
+		}
+	}
+	@media screen and (min-width: 1425px) {
+		.swiper {
+			height: 830px;
+		}
+	}
+	/* #endif */
+
+</style>

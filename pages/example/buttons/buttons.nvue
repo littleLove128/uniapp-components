@@ -1,0 +1,220 @@
+<template>
+	<view>
+		<top-title-arrow><text>按钮页面</text></top-title-arrow>
+		<view class="segment"></view>
+		<left-border-word title="切换按钮"></left-border-word>
+		<view class="first"><switch-button @change="change" :list="list" :background="true" :tabbarBack="true" :radius="true" :tabbarRadius="true" /></view>
+		<view class="segment"></view>
+		<left-border-word title="功能按钮(线性按钮--大型)"></left-border-word>
+		<view class="second">
+			<functional-button title="高亮" size="large" highlight @click='isClicked()'>
+			</functional-button>
+			<functional-button title="默认" size="large" >
+			</functional-button>
+			<functional-button title="禁用" size="large" disabled @click='clickDis()'>
+			</functional-button>
+		</view>
+		<view class="segment"></view>
+		<left-border-word title="功能按钮(线性按钮--中型)"></left-border-word>
+		<view class="second">
+			<functional-button title="高亮" highlight @click='isClicked()'>
+			</functional-button>
+			<functional-button title="默认" size="medium" >
+			</functional-button>
+			<functional-button title="禁用" disabled @click='clickDis()'>
+			</functional-button>
+		</view>
+		<view class="segment"></view>
+		<left-border-word title="功能按钮(线性按钮--小型)"></left-border-word>
+		<view class="second">
+			<functional-button title="高亮" size="small" highlight @click='isClicked()'>
+			</functional-button>
+			<functional-button title="默认" size="small" >
+			</functional-button>
+			<functional-button title="禁用" size="small" disabled @click='clickDis()'>
+			</functional-button>
+		</view>
+		<view class="segment"></view>
+		<left-border-word title="功能按钮(面性按钮--大型)"></left-border-word>
+		<view class="second">
+			<functional-button title="高亮" size="large" type="surface" highlight @click='isClicked()'>
+			</functional-button>
+			<functional-button title="默认" size="large" type="surface">
+			</functional-button>
+			<functional-button title="禁用" size="large" type="surface" disabled @click='clickDis()'>
+			</functional-button>
+		</view>
+		<view class="segment"></view>
+		<left-border-word title="功能按钮(面性按钮--中型)"></left-border-word>
+		<view class="second">
+			<functional-button title="高亮" type="surface" highlight @click='isClicked()'>
+			</functional-button>
+			<functional-button title="默认" type="surface">
+			</functional-button>
+			<functional-button title="禁用"  type="surface" disabled @click='clickDis()'>
+			</functional-button>
+		</view>
+		<view class="segment"></view>
+		<left-border-word title="功能按钮(面性按钮--小型)"></left-border-word>
+		<view class="second">
+			<functional-button title="高亮" size="small" type="surface" highlight @click='isClicked()'>
+			</functional-button>
+			<functional-button title="默认" size="small" type="surface">
+			</functional-button>
+			<functional-button title="禁用" size="small"  type="surface" disabled @click='clickDis()'>
+			</functional-button>
+		</view>
+		<view class="segment"></view>
+		<left-border-word title="功能按钮(圆形线性按钮--小中大型)"></left-border-word>
+		<view class="second">
+			<functional-button title="高亮" size="small" circle  highlight @click='isClicked()'>
+			</functional-button>
+			<functional-button title="默认" circle>
+			</functional-button>
+			<functional-button title="禁用" size="large" circle disabled @click='clickDis()'>
+			</functional-button>
+		</view>
+		<view class="segment"></view>
+		<left-border-word title="功能按钮(圆形面性按钮--小中大型)"></left-border-word>
+		<view class="second">
+			<functional-button title="高亮" size="small" circle type="surface" highlight @click='isClicked()'>
+			</functional-button>
+			<functional-button title="默认" type="surface" circle>
+			</functional-button>
+			<functional-button title="禁用" size="large" circle  type="surface" disabled @click='clickDis()'>
+			</functional-button>
+		</view>
+		<view class="segment"></view>
+		<left-border-word title="带图标功能按钮(圆形面性按钮--小中大型)"></left-border-word>
+		<view class="second">
+			<functional-button icon="iconshezhi" title="高亮" size="small" circle type="surface" highlight @click='isClicked()'>
+			</functional-button>
+			<functional-button icon="iconwode-moren" title="默认" type="surface" circle>
+			</functional-button>
+			<functional-button title="禁用" icon="icona-zu1649" size="large" circle  type="surface" disabled @click='clickDis()'>
+			</functional-button>
+		</view>
+		<view class="segment"></view>
+		<left-border-word title="带图标功能按钮(圆形线性按钮--小中大型)"></left-border-word>
+		<view class="second">
+			<functional-button icon="iconshezhi" title="高亮" size="small" circle highlight @click='isClicked()'>
+			</functional-button>
+			<functional-button icon="iconwode-moren" title="默认" circle>
+			</functional-button>
+			<functional-button title="禁用" icon="icona-zu1649" size="large" circle   disabled @click='clickDis()'>
+			</functional-button>
+		</view>
+		<view class="segment"></view>
+		<left-border-word title="带图标功能按钮(圆角面性按钮--小中大型)"></left-border-word>
+		<view class="second">
+			<functional-button icon="iconshezhi" title="高亮" size="small"  type="surface" highlight @click='isClicked()'>
+			</functional-button>
+			<functional-button icon="iconwode-moren" title="默认" type="surface" >
+			</functional-button>
+			<functional-button title="禁用" icon="icona-zu1649" size="large"   type="surface" disabled @click='clickDis()'>
+			</functional-button>
+		</view>
+		<view class="segment"></view>
+		<left-border-word title="带图标功能按钮(圆角线性按钮--小中大型)"></left-border-word>
+		<view class="second">
+			<functional-button icon="iconshezhi" title="高亮" size="small"   highlight @click='isClicked()'>
+			</functional-button>
+			<functional-button icon="iconwode-moren" title="默认" >
+			</functional-button>
+			<functional-button title="禁用" icon="icona-zu1649" size="large"   disabled @click='clickDis()'>
+			</functional-button>
+		</view>
+		<view class="segment"></view>
+		<left-border-word title="带图标底部长按钮(圆角线性按钮--小中大型)"></left-border-word>
+		<view class="third">
+			<functional-button width="100%" icon="iconshezhi" title="高亮" size="small"   highlight @click='isClicked()'>
+			</functional-button>
+			<functional-button width="100%" icon="iconwode-moren" title="默认" >
+			</functional-button>
+			<functional-button width="100%" title="禁用" icon="icona-zu1649" size="large"   disabled @click='clickDis()'>
+			</functional-button>
+			<functional-button width="400rpx" title="禁用" icon="icona-zu1649" size="large"   disabled @click='clickDis()'>
+			</functional-button>
+		</view>
+		
+	</view>
+</template>
+
+<script>
+export default {
+	data() {
+		return {
+			list: [
+				{
+					id: 0,
+					text: '全部'
+				},
+				{
+					id: 1,
+					text: 'V1'
+				},
+				{
+					id: 2,
+					text: 'V2'
+				},
+				{
+					id: 3,
+					text: 'V3'
+				},
+				{
+					id: 4,
+					text: 'V4'
+				},
+				{
+					id: 5,
+					text: 'V5'
+				}
+			]
+		};
+	},
+	methods: {
+		change(index) {
+			console.log('index', index);
+		},
+		clickDis(){
+			console.log('点击禁用')
+		},
+		isClicked(){
+			console.log('点击高亮')
+		}
+	}
+};
+</script>
+<style lang="scss">
+	@import  '../../../common/icons/iconfont.css';
+	.first{
+		margin:10rpx auto;
+		width: 90%;
+	}
+	.segment{
+		margin-top: 30rpx;
+	}
+	.second{
+		width: 90%;
+		// height: 600rpx;
+		padding: 30rpx;
+		box-shadow: 1rpx 1rpx 1rpx 3rpx rgba(0,0,0,.08);
+		margin:10rpx auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		// align-items: center;
+	}
+	.third{
+		width: 90%;
+		height: 400rpx;
+		padding: 30rpx;
+		box-shadow: 1rpx 1rpx 1rpx 3rpx rgba(0,0,0,.08);
+		margin:10rpx auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+</style>
+

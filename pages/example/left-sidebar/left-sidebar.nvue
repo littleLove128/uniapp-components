@@ -1,0 +1,98 @@
+<template>
+	<div>
+		<top-title-home :isFixed="true">
+			<text class="iconfontWihte iconcaidan-1" @click="clickMenu()"></text>
+			<text>{{home}}</text>
+			<text class="iconfont iconxiaoxi"></text>
+		</top-title-home>
+
+		<SlideBar :visibleSync='visibleSync' :list='list' mode='left' :maskClick='true' @click=handleClick />
+	</div>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				home: "左侧边栏",
+				visibleSync: false,
+				list: [{
+						text: "首页",
+						icon: require('@/assets/images/home.png'),
+						to: '/pages/example/left-sidebar/left-sidebar'
+					},
+					{
+						text: "机枪池",
+						icon: require('@/assets/images/gunPool.png'),
+						to: '#'
+					},
+					{
+						text: "FIL 矿池",
+						icon: require('@/assets/images/minPool.png'),
+						to: '#'
+					},
+					{
+						text: "邀请好友",
+						icon: require('@/assets/images/invite.png'),
+						to: '#'
+					},
+					{
+						text: "我的社区",
+						icon: require('@/assets/images/community.png'),
+						to: '#'
+					},
+					{
+						text: "我的套餐",
+						icon: require('@/assets/images/package.png'),
+						to: '#'
+					},
+					{
+						text: "幸运奖励",
+						icon: require('@/assets/images/luckyPool.png'),
+						to: '#'
+					},
+					{
+						text: "特别奖励",
+						icon: require('@/assets/images/reward.png'),
+						to: '#'
+					},
+					{
+						text: "币种兑换",
+						icon: require('@/assets/images/exchange.png'),
+						to: '#'
+					},
+					{
+						text: "用户反馈",
+						icon: require('@/assets/images/feedback.png'),
+						to: '#'
+					},
+					{
+						text: "Heco浏览器",
+						icon: require('@/assets/images/browser.png'),
+						to: '#'
+					},
+					{
+						text: "退出登录",
+						icon: require('@/assets/images/signOut.png'),
+						to: '#'
+					},
+				]
+			}
+		},
+		methods: {
+			clickMenu() {
+				console.log('显示菜单')
+
+				this.visibleSync = !this.visibleSync
+			},
+			handleClick(val) {
+				console.log('val', val)
+				this.visibleSync = !this.visibleSync
+			}
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	@import '../../../common/icons/iconfont.css';
+</style>

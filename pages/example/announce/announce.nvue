@@ -1,0 +1,75 @@
+<template>
+	<view>
+		<top-title-arrow title="系统公告"></top-title-arrow>
+		<view class="announcePage">
+			<shadow-card width="100%" padding="10px" v-for="index in 10" :key='index' class="line" >
+				<view class="contentArea" @click="intoDetail()">
+					<view class="left">
+						<image src="/static/logo.png" mode=""></image>
+					</view>
+					<view class="right">
+						<text class="topTitle">
+							量化机器人3月30日正式上线啦~量化机器人3月30日正式上线啦~量化机器人3月30日正式上线啦~
+						</text>
+						<view class="bottomTime">2021-03-26</view>
+					</view>
+				</view>
+			</shadow-card>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		methods:{
+			intoDetail(){
+				console.log('开始跳转')
+				uni.navigateTo({url:'/pages/example/detail-page/detail-page'});
+			}
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	.announcePage{
+		margin-top: 20px;
+		margin-left: 15px;
+		margin-right: 15px;
+		.line{
+			margin-bottom: 10px;
+		}
+		.contentArea{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			.left{
+				width: 140rpx;
+				height: 140rpx;
+				margin-right: 20rpx;
+				image{
+					width: 140rpx;
+					height: 140rpx;
+					border-radius: 20rpx;
+				}
+			}
+			.right{
+				width: 480rpx;
+				.topTitle{
+					font-size: 32rpx;
+					font-weight: bold;
+					overflow:hidden;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+					// color: #1E262F;
+				}
+				.bottomTime{
+					margin-top: 62rpx;
+					font-size: 24rpx;
+					// color: #BEBFC4;
+				}
+			}
+		}
+	}
+</style>
+

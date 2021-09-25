@@ -1,0 +1,26 @@
+<template>
+	<div>
+		<top-title-arrow title="详情"></top-title-arrow>
+		<detail-page 
+		time="2021-7-14"
+		title="基于2021-04-19 您反馈的消息，我们认真阅读并给出以下答复。"
+		author="BOTT" 
+		content="最近24小时，<p>BTC爆仓2421.60万美元</p>，ETH爆仓163.20万美元，BCH爆仓12.61万美元，LTC爆仓73.90万美元，ETC爆仓14.26万美元，XRP爆仓11.92万美元，EOS爆仓69.83万美元，BSV爆仓4.83万美元，TRX爆仓3.56万美元。
+
+最近24小时，BTC爆仓2421.60万美元，ETH爆仓163.20万美元，BCH爆仓12.61万美元，LTC爆仓73.90万美元，ETC爆仓14.26万美元，XRP爆仓11.92万美元，EOS爆仓69.83万美元，BSV爆仓4.83万美元，TRX爆仓3.56万美元。
+
+最近24小时，BTC爆仓2421.60万美元，ETH爆仓163.20万美元，BCH爆仓12.61万美元，LTC爆仓73.90万美元，ETC爆仓14.26万美元，XRP爆仓11.92万美元，EOS爆仓69.83万美元，BSV爆仓4.83万美元，TRX爆仓3.56万美元。">
+			
+		</detail-page>
+	</div>
+</template>
+
+<script>
+	export default {
+		
+	}
+</script>
+
+<style>
+
+</style>
